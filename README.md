@@ -1,3 +1,3 @@
-# Just a personal webpage
+# Personal website
 
-Theme: [Compass](https://github.com/excentris/compass)
+Theme: [Academic Pages](https://github.com/academicpages/academicpages.github.io)
