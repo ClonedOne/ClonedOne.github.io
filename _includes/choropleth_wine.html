@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+
+
+<style>
+  .countries {
+    fill: none;
+    stroke: #fff;
+    stroke-linejoin: round;
+  }
+  .legendThreshold {
+      font-size: 12px;
+      font-family: sans-serif;
+  }
+</style>
+
+<svg></svg>
+
+<script>
+
+req = new XMLHttpRequest();
+req.open(
+    "GET", 
+  "https://raw.githubusercontent.com/ClonedOne/exp_nbs/master/res/code_country.json", 
+  false
+);
+req.send();
+var codeCountry = JSON.parse(req.responseText);
+var xTicks = []
+
+for (let code of Object.keys(codeCountry)){
+  xTicks.push(codeCountry[code]);
+}
+
+
+// based on the example at 
+// http://bl.ocks.org/palewire/d2906de347a160f38bc0b7ca57721328
+
+// GLOBALS
+
+var width = 900;
+var height = 1000;
+
+var margin = {
+  top: 50,
+  left: 50,
+  right: 50,
+  bottom: 170
+};
+
+
+var legendLabels = ['0', '1-5', '6-10', '11-25', '26-100', '101-1000', '1000-10000', '>10000' ];
+var intervals = [1, 6, 11, 26, 101, 1001, 10001];
+var colorRange = d3.schemeRdPu[8];
+
+
+// COLORMAP
+
+var colorMap = d3.scaleThreshold()
+    .domain(intervals)
+    .range(colorRange);
+
+
+// SVG SETUP
+
+var svg = d3.select("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("id", "mainsvg");
+
+var svgMap =  d3.select("svg#mainsvg")
+    .append("svg")
+        .attr("id", "svgMap")
+        .attr("height", height/2)
+        .attr("width", width);
+
+var svgBar = d3.select("svg#mainsvg")
+    .append("g")
+        .append("svg")
+        .attr("id", "svgBar")
+        .attr("transform", "translate(0," + (height/2) + ")")
+        .attr("height", height/2)
+        .attr("width", width);
+
+
+// MAP
+
+var path = d3.geoPath();
+
+var projection = d3.geoNaturalEarth()
+    .scale(width / 2 / Math.PI)
+    .translate([width / 2, height / 4]);
+
+var path = d3.geoPath().projection(projection);
+
+var data = d3.map();
+
+
+// BAR CHART
+
+var xScale = d3.scaleBand()
+  .domain(xTicks)
+  .rangeRound([margin.left, width - margin.right])
+  .padding(0.2);
+
+var yScale = d3.scaleLinear()
+  .domain([80, 95])
+  .range([height/2 - margin.bottom, margin.top]);
+
+var xAxis = svgBar.append("g")
+  .attr("transform", `translate(0, ${height/2 - margin.bottom})`)
+  .call(d3.axisBottom().scale(xScale))
+  .selectAll("text")    
+  .style("text-anchor", "end")
+  .attr("dx", "-.8em")
+  .attr("dy", ".15em")
+  .attr("transform", "rotate(-65)");
+
+var yAxis = svgBar.append("g")
+  .attr("transform", `translate(${margin.left}, 0)`)
+  .call(d3.axisLeft().scale(yScale));
+  
+
+
+// LEGEND
+
+var g = svgMap.append("g")
+    .attr("class", "legendThreshold")
+    .attr("transform", "translate(20,20)");
+
+var legend = d3.legendColor()
+    .labels(function (d) { return legendLabels[d.i]; })
+    .shapePadding(4)
+    .scale(colorMap);
+
+svgMap.select(".legendThreshold")
+    .call(legend);
+
+
+// TOOTLIP SETUP
+
+var Tooltip = d3.select("body")
+    .append("div")
+    .style("width", 200)
+    .style("position", "absolute")
+    .style("text-align", "center")
+    .style("color", "#585858")
+    .style("opacity", 0)
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-color", colorRange[7])
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "2px");
+
+function mouseover(d, i) {
+    d.total = data.get(d.id) || [0, 0];
+    
+    Tooltip
+        .html(
+            "Country: " + d.id + 
+            "<br> Wines reviewed: " + d.total[0] +
+            "<br> Average score: " +
+            parseFloat(Math.round(d.total[1] * 100) / 100).toFixed(2) 
+        )
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px")
+        .style("opacity", 1.0);
+
+    d3.selectAll("rect")
+        .style("opacity", 0.5);
+
+    d3.selectAll("path")
+        .style("opacity", 0.5);
+
+    d3.selectAll("rect.c_" + i)
+        .style("stroke", "black")
+        .style("opacity", 1.0);
+
+    d3.selectAll("path.c_" + i)
+        .style("stroke", "black")
+        .style("opacity", 1.0);
+};
+
+var mousemove = function(d) {
+    Tooltip
+        .style("left", (d3.event.pageX + 10) + "px")
+        .style("top", (d3.event.pageY + 10) + "px");
+};
+
+function mouseleave(d, i) {
+    Tooltip
+        .style("opacity", 0)
+
+    d3.selectAll("rect")
+        .style("opacity", 0.9);
+
+    d3.selectAll("rect.c_" + i)
+        .style("stroke", "none");
+
+    d3.selectAll("path")
+        .style("opacity", 0.9);
+
+    d3.selectAll("path.c_" + i)
+        .style("stroke", "none");
+};
+
+
+// DATA LOADING 
+
+// The script will try to load quite a bit of data, therefore it is designed to
+// operate asynchronously
+
+d3.queue()
+    .defer(
+        d3.json, 
+        "http://enjalot.github.io/wwsd/data/world/world-110m.geojson"
+    )
+    .defer(
+        d3.csv, 
+        "https://raw.githubusercontent.com/ClonedOne/exp_nbs/master/res/country_wine_data.csv",
+        function(d) { data.set(d.code, [+d.count, +d.points]); }
+    )
+    .await(ready);
+
+// This callback function will draw the map
+
+function ready(error, topography) {
+    if (error) throw error;
+
+    // Plotting the map 
+
+    svgMap.append("g")
+        .attr("class", "countries")
+        .selectAll("path")
+        .data(topography.features)
+        .enter().
+        append("path")
+            .attr("fill", function (d){
+                d.total = data.get(d.id) || [0, 0];
+                return colorMap(d.total[0]);
+            })
+            .style("opacity", 0.9)
+            .attr("d", path)
+            .attr("class", function(d,i) { return "c_" + i; })
+            .on("mouseover", function(d,i) { mouseover(d, i) })
+            .on("mousemove", mousemove)
+            .on("mouseleave", function(d,i) { mouseleave(d, i) });
+
+    // Plotting the bar chart
+    
+    svgBar.selectAll("rect")
+        .data(topography.features)
+        .enter()
+        .append("rect")
+            .attr("x", function(d) {
+                return xScale(codeCountry[d.id]); 
+            })
+            .attr("y", function(d) {
+                d.total = data.get(d.id) || [0, 0];
+                return yScale(d.total[1]);
+            })
+            .attr("width", xScale.bandwidth())
+            .attr("height", function(d){
+                d.total = data.get(d.id) || [0, 0];
+                return height/2 - margin.bottom - yScale(d.total[1]);
+            })
+            .attr("fill", function(d) {
+                d.total = data.get(d.id) || [0, 0];
+                return colorMap(d.total[0])
+            })
+            .style("opacity", 0.9)
+            .attr("class", function(d,i) { return "c_" + i; })
+            .on("mouseover", function(d,i) { mouseover(d, i) })
+            .on("mousemove", mousemove)
+            .on("mouseleave", function(d,i) { mouseleave(d, i) });
+
+}
+
+
+// TITLE
+
+svgMap.append("text")
+    .attr("x", (width / 2))
+    .attr("y", 30)
+    .style("fill", "#585858")
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .style("font-family", "sans-serif")
+    .text("Wines reviewed per country");
+
+svgBar.append("text")
+    .attr("x", (width/ 2))
+    .attr("y", 30)
+    .style("fill", "#585858")
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .style("font-family", "sans-serif")
+    .text("Average score per country");
+
+</script>
