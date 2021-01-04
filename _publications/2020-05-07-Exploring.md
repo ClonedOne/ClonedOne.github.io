@@ -28,7 +28,7 @@ demonstrate the feasibility of our backdoor attacks in practice, we create a
 watermarking utility for Windows PE files that preserves the binary's
 functionality. Finally, we experiment with potential defensive strategies and
 show the difficulties of completely defending against these powerful attacks,
-especially when the attacks blend in with the legitimate sample distribution. 
+especially when the attacks blend in with the legitimate sample distribution.
 
 
 <pre>

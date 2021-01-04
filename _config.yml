@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : 
+  username               :
 facebook:
   username               :
   app_id                 :
@@ -85,10 +85,10 @@ author:
   bio              : "PhD Student"
   location         : "Boston, MA"
   employer         :
-  pubmed           : 
+  pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=ClHeQx0AAAAJ&hl=en"
-  email            : "severi.g@husky.neu.edu"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  email            : "severi.g@northeastern.edu"
+  researchgate     : "https://www.researchgate.net/profile/Giorgio_Severi"
   uri              :
   bitbucket        :
   codepen          :
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "cloned_tweets"
+  twitter          :
   vine             :
   weibo            :
   xing             :
