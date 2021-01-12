@@ -4,9 +4,9 @@ collection: publications
 permalink: /publication/2020-05-07-Explanation
 excerpt: ''
 date: 2020-05-07
-venue: 'ArXiv'
+venue: 'To appear in USENIX Security 2021'
 paperurl: 'https://arxiv.org/abs/2003.01031'
-citation: 'Severi, Giorgio, Jim Meyer, Scott Coull, and Alina Oprea. "Exploring Backdoor Poisoning Attacks Against Malware Classifiers" arXiv preprint arXiv:2003.01031 (2020).'
+citation: 'Severi, Giorgio, Jim Meyer, Scott Coull, and Alina Oprea. "Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers" arXiv preprint arXiv:2003.01031 (2020).'
 ---
 
 [Paper](https://arxiv.org/abs/2003.01031)
