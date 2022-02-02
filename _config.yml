@@ -88,7 +88,7 @@ author:
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?user=ClHeQx0AAAAJ&hl=en"
   email            : "severi.g@northeastern.edu"
-  researchgate     : "https://www.researchgate.net/profile/Giorgio_Severi"
+  researchgate     : # "https://www.researchgate.net/profile/Giorgio_Severi"
   uri              :
   bitbucket        :
   codepen          :
@@ -181,9 +181,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
-    output: true
-    permalink: /:collection/:path/
+  # portfolio:
+  #   output: true
+  #   permalink: /:collection/:path/
   talks:
     output: true
     permalink: /:collection/:path/

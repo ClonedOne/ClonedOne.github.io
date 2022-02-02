@@ -4,12 +4,12 @@ collection: publications
 permalink: /publication/2020-05-07-Explanation
 excerpt: ''
 date: 2020-05-07
-venue: 'To appear in USENIX Security 2021'
-paperurl: 'https://arxiv.org/abs/2003.01031'
-citation: 'Severi, Giorgio, Jim Meyer, Scott Coull, and Alina Oprea. "Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers" arXiv preprint arXiv:2003.01031 (2020).'
+venue: 'USENIX Security 2021'
+paperurl: 'https://www.usenix.org/conference/usenixsecurity21/presentation/severi'
+citation: 'Severi, Giorgio, Jim Meyer, Scott Coull, and Alina Oprea. "Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers." In 30th USENIX Security Symposium (USENIX Security 21). 2021.'
 ---
 
-[Paper](https://arxiv.org/abs/2003.01031)
+[Paper](https://www.usenix.org/conference/usenixsecurity21/presentation/severi)
 
 Training pipelines for machine learning (ML) based malware classification often
 rely on crowdsourced threat feeds, exposing a natural attack injection point. In
@@ -31,12 +31,10 @@ these attacks, especially when the attacks blend in with the legitimate sample
 distribution.
 
 <pre>
-@misc{severi2021explanationguided,
-      title={Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers}, 
-      author={Giorgio Severi and Jim Meyer and Scott Coull and Alina Oprea},
-      year={2021},
-      eprint={2003.01031},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR}
+@inproceedings{severi2021explanation,
+  title={Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers},
+  author={Severi, Giorgio and Meyer, Jim and Coull, Scott and Oprea, Alina},
+  booktitle={30th $\{$USENIX$\}$ Security Symposium ($\{$USENIX$\}$ Security 21)},
+  year={2021}
 }
 </pre>
