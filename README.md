@@ -1,3 +1,3 @@
 # Personal website
 
-Theme: [Academic Pages](https://github.com/academicpages/academicpages.github.io)
+Theme: [al-folio](https://github.com/alshedivat/al-folio)

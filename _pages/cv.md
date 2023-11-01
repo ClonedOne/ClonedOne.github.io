@@ -1,12 +1,11 @@
 ---
-layout: archive
-title: "CV"
+layout: cv
 permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
+title: cv
+nav: true
+nav_order: 3
+cv_pdf: GiorgioSeveriResume.pdf
+description: 
+toc:
+  sidebar: left
 ---
-
-{% include base_path %}
-
-[Download CV here](http://ClonedOne.github.io/files/GiorgioSeveriCV.pdf)
