@@ -18,6 +18,6 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-I am a computer science PhD student at [Northeastern University](https://www.northeastern.edu/) in the [NDS2](https://nds2.ccs.neu.edu/) lab, advised by professor [Alina Oprea](http://www.ccs.neu.edu/home/alina/).
+I am a computer science PhD candidate at [Northeastern University](https://www.northeastern.edu/) in the [NDS2](https://nds2.ccs.neu.edu/) lab, advised by professor [Alina Oprea](http://www.ccs.neu.edu/home/alina/).
 
 My research focuses on breaking machine learning systems. I am also interested in most aspects of ML-Security.
