@@ -18,7 +18,7 @@
 
 @patent{coullSystemMethodHeterogeneous2022,
   title = {System and Method for Heterogeneous Transferred Learning for Enhanced Cybersecurity Threat Detection},
-  author = {Coull, Scott Eric and KRISILOFF, David and SEVERI, Giorgio},
+  author = {Coull, Scott Eric and Krisiloff, David and Severi, Giorgio},
   year = {2022},
   month = oct,
   number = {US11475128B2},
@@ -54,7 +54,7 @@
   author = {Di Bartolomeo, Sara and Severi, Giorgio and Schetinger, Victor and Dunne, Cody},
   year = {2023},
   urldate = {2023-08-11},
-  abstract = {Large language models (LLMs) have recently taken the world by storm. They can generate coherent text, hold meaningful conversations, and be taught concepts and basic sets of instructions\textemdash such as the steps of an algorithm. In this context, we are interested in exploring the application of LLMs to graph drawing algorithms by performing experiments on ChatGPT. These algorithms are used to improve the readability of graph visualizations. The probabilistic nature of LLMs presents challenges to implementing algorithms correctly, but we believe that LLMs' ability to learn from vast amounts of data and apply complex operations may lead to interesting graph drawing results. For example, we could enable users with limited coding backgrounds to use simple natural language to create effective graph visualizations. Natural language specification would make data visualization more accessible and user-friendly for a wider range of users. Exploring LLMs' capabilities for graph drawing can also help us better understand how to formulate complex algorithms for LLMs; a type of knowledge that could transfer to other areas of computer science. Overall, our goal is to shed light on the exciting possibilities of using LLMs for graph drawing while providing a balanced assessment of the challenges and opportunities they present. A free copy of this paper with all supplemental materials to reproduce our results is available at https://osf.io/n5rxd/.},
+  abstract = {Large language models (LLMs) have recently taken the world by storm. They can generate coherent text, hold meaningful conversations, and be taught concepts and basic sets of instructions{\textemdash}such as the steps of an algorithm. In this context, we are interested in exploring the application of LLMs to graph drawing algorithms by performing experiments on ChatGPT. These algorithms are used to improve the readability of graph visualizations. The probabilistic nature of LLMs presents challenges to implementing algorithms correctly, but we believe that LLMs' ability to learn from vast amounts of data and apply complex operations may lead to interesting graph drawing results. For example, we could enable users with limited coding backgrounds to use simple natural language to create effective graph visualizations. Natural language specification would make data visualization more accessible and user-friendly for a wider range of users. Exploring LLMs' capabilities for graph drawing can also help us better understand how to formulate complex algorithms for LLMs; a type of knowledge that could transfer to other areas of computer science. Overall, our goal is to shed light on the exciting possibilities of using LLMs for graph drawing while providing a balanced assessment of the challenges and opportunities they present. A free copy of this paper with all supplemental materials to reproduce our results is available at https://osf.io/n5rxd/.},
   code = {https://osf.io/n5rxd/},
   langid = {english},
   file = {/Users/gio/Zotero/storage/IGNI65RF/Di Bartolomeo et al. - 2023 - Ask and you shall receive (a graph drawing) Testi.pdf}
@@ -119,7 +119,7 @@
   address = {{Cham}},
   doi = {10.1007/978-3-319-93411-2_1},
   urldate = {2019-02-20},
-  abstract = {Malware sandbox systems have become a critical part of the Internet's defensive infrastructure. These systems allow malware researchers to quickly understand a sample's behavior and effect on a system. However, current systems face two limitations: first, for performance reasons, the amount of data they can collect is limited (typically to system call traces and memory snapshots). Second, they lack the ability to perform retrospective analysis\textemdash that is, to later extract features of the malware's execution that were not considered relevant when the sample was originally executed. In this paper, we introduce a new malware sandbox system, Malrec, which uses whole-system deterministic record and replay to capture high-fidelity, whole-system traces of malware executions with low time and space overheads. We demonstrate the usefulness of this system by presenting a new dataset of 66,301 malware recordings collected over a two-year period, along with two preliminary analyses that would not be possible without full traces: an analysis of kernel mode malware and exploits, and a fine-grained malware family classification based on textual memory access contents. The Malrec system and dataset can help provide a standardized benchmark for evaluating the performance of future dynamic analyses.},
+  abstract = {Malware sandbox systems have become a critical part of the Internet's defensive infrastructure. These systems allow malware researchers to quickly understand a sample's behavior and effect on a system. However, current systems face two limitations: first, for performance reasons, the amount of data they can collect is limited (typically to system call traces and memory snapshots). Second, they lack the ability to perform retrospective analysis{\textemdash}that is, to later extract features of the malware's execution that were not considered relevant when the sample was originally executed. In this paper, we introduce a new malware sandbox system, Malrec, which uses whole-system deterministic record and replay to capture high-fidelity, whole-system traces of malware executions with low time and space overheads. We demonstrate the usefulness of this system by presenting a new dataset of 66,301 malware recordings collected over a two-year period, along with two preliminary analyses that would not be possible without full traces: an analysis of kernel mode malware and exploits, and a fine-grained malware family classification based on textual memory access contents. The Malrec system and dataset can help provide a standardized benchmark for evaluating the performance of future dynamic analyses.},
   code = {https://github.com/ClonedOne/malwords},
   isbn = {978-3-319-93410-5 978-3-319-93411-2},
   langid = {english},
@@ -142,13 +142,18 @@
 
 @inproceedings{severiPoisoningNetworkFlow2023,
   title = {Poisoning {{Network Flow Classifiers}}},
-  booktitle = {Annual {{Computer Security Applications Conference}}},
+  booktitle = {Proceedings of the 39th {{Annual Computer Security Applications Conference}}},
   author = {Severi, Giorgio and Boboila, Simona and Oprea, Alina and Holodnak, John and Kratkiewicz, Kendra and Matterer, Jason},
   year = {2023},
-  urldate = {2023-06-27},
-  abstract = {As machine learning (ML) classifiers increasingly oversee the automated monitoring of network traffic, studying their resilience against adversarial attacks becomes critical. This paper focuses on poisoning attacks, specifically backdoor attacks, against network traffic flow classifiers. We investigate the challenging scenario of clean-label poisoning where the adversary's capabilities are constrained to tampering only with the training data - without the ability to arbitrarily modify the training labels or any other component of the training process. We describe a trigger crafting strategy that leverages model interpretability techniques to generate trigger patterns that are effective even at very low poisoning rates. Finally, we design novel strategies to generate stealthy triggers, including an approach based on generative Bayesian network models, with the goal of minimizing the conspicuousness of the trigger, and thus making detection of an ongoing poisoning campaign more challenging. Our findings provide significant insights into the feasibility of poisoning attacks on network traffic classifiers used in multiple scenarios, including detecting malicious communication and application classification.},
+  month = dec,
+  series = {{{ACSAC}} '23},
+  pages = {337--351},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/3627106.3627123},
+  urldate = {2023-12-29},
+  abstract = {As machine learning (ML) classifiers increasingly oversee the automated monitoring of network traffic, studying their resilience against adversarial attacks becomes critical. This paper focuses on poisoning attacks, specifically backdoor attacks, against network traffic flow classifiers. We investigate the challenging scenario of clean-label poisoning where the adversary's capabilities are constrained to tampering only with the training data {\textemdash} without the ability to arbitrarily modify the training labels or any other component of the training process. We describe a trigger crafting strategy that leverages model interpretability techniques to generate trigger patterns that are effective even at very low poisoning rates. Finally, we design novel strategies to generate stealthy triggers, including an approach based on generative Bayesian network models, with the goal of minimizing the conspicuousness of the trigger, and thus making detection of an ongoing poisoning campaign more challenging. Our findings provide significant insights into the feasibility of poisoning attacks on network traffic classifiers used in multiple scenarios, including detecting malicious communication and application classification.},
   code = {https://github.com/ClonedOne/poisoning\_network\_flow\_classifiers},
-  langid = {english},
-  keywords = {Computer Science - Cryptography and Security,Computer Science - Machine Learning},
-  file = {/Users/gio/Zotero/storage/6ATCMDJJ/Severi et al. - 2023 - Poisoning Network Flow Classifiers.pdf}
+  isbn = {9798400708862},
+  file = {/Users/gio/Zotero/storage/R23BY8G9/Severi et al. - 2023 - Poisoning Network Flow Classifiers.pdf}
 }
