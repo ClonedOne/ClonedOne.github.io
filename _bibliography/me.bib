@@ -1,32 +1,94 @@
-@inproceedings{chaudhariChameleonIncreasingLabelOnly2024,
-  title = {Chameleon: {{Increasing Label-Only Membership Leakage}} with {{Adaptive Poisoning}}},
-  shorttitle = {Chameleon},
-  booktitle = {The {{Twelfth International Conference}} on {{Learning Representations}} ({{ICLR}})},
-  author = {Chaudhari, Harsh and Severi, Giorgio and Oprea, Alina and Ullman, Jonathan},
-  year = {2024},
-  month = jan,
-  urldate = {2024-06-04},
-  abstract = {The integration of Machine Learning (ML) in numerous critical applications introduces a range of privacy concerns for individuals who provide their datasets for ML training purposes. One such privacy risk is Membership Inference (MI), in which an adversary seeks to determine whether a particular data point was included in the training dataset of a model. Current state-of-the-art MI approaches capitalize on access to the model's predicted confidence scores to successfully perform membership inference, and employ data poisoning to further enhance their effectiveness. In this work, we focus on the less explored and more realistic label-only setting, where the model provides only the predicted label as output. We show that existing label-only attacks are ineffective at inferring membership in the low False Positive Rate (FPR) regime. To address this challenge, we propose a new attack Chameleon that leverages a novel data poisoning strategy and an efficient query selection method to achieve significantly more accurate membership inference than existing label-only attacks, especially for low FPRs.},
+@inproceedings{severiMalrecCompactFullTrace2018,
+  title = {Malrec: {{Compact Full-Trace Malware Recording}} for {{Retrospective Deep Analysis}}},
+  shorttitle = {Malrec},
+  booktitle = {Detection of {{Intrusions}} and {{Malware}}, and {{Vulnerability Assessment}} ({{DIMVA}})},
+  author = {Severi, Giorgio and Leek, Tim and {Dolan-Gavitt}, Brendan},
+  year = {2018},
+  volume = {10885},
+  pages = {3--23},
+  publisher = {Springer International Publishing},
+  address = {Cham},
+  doi = {10.1007/978-3-319-93411-2_1},
+  urldate = {2019-02-20},
+  abstract = {Malware sandbox systems have become a critical part of the Internet's defensive infrastructure. These systems allow malware researchers to quickly understand a sample's behavior and effect on a system. However, current systems face two limitations: first, for performance reasons, the amount of data they can collect is limited (typically to system call traces and memory snapshots). Second, they lack the ability to perform retrospective analysis---that is, to later extract features of the malware's execution that were not considered relevant when the sample was originally executed. In this paper, we introduce a new malware sandbox system, Malrec, which uses whole-system deterministic record and replay to capture high-fidelity, whole-system traces of malware executions with low time and space overheads. We demonstrate the usefulness of this system by presenting a new dataset of 66,301 malware recordings collected over a two-year period, along with two preliminary analyses that would not be possible without full traces: an analysis of kernel mode malware and exploits, and a fine-grained malware family classification based on textual memory access contents. The Malrec system and dataset can help provide a standardized benchmark for evaluating the performance of future dynamic analyses.},
+  code = {https://github.com/ClonedOne/malwords},
+  isbn = {978-3-319-93410-5 978-3-319-93411-2},
   langid = {english},
-  file = {/Users/gio/Zotero/storage/HEW78RLK/Chaudhari et al. - 2023 - Chameleon Increasing Label-Only Membership Leakag.pdf}
+  file = {/Users/gio/Zotero/storage/LKT3P6FZ/Severi et al. - 2018 - Malrec Compact Full-Trace Malware Recording for R.pdf}
 }
 
-@misc{chaudhariPhantomGeneralTrigger2024,
-  title = {Phantom: {{General Trigger Attacks}} on {{Retrieval Augmented Language Generation}}},
-  shorttitle = {Phantom},
-  author = {Chaudhari, Harsh and Severi, Giorgio and Abascal, John and Jagielski, Matthew and {Choquette-Choo}, Christopher A. and Nasr, Milad and {Nita-Rotaru}, Cristina and Oprea, Alina},
-  year = {2024},
-  month = may,
-  number = {arXiv:2405.20485},
-  eprint = {2405.20485},
-  primaryclass = {cs},
-  publisher = {arXiv},
-  urldate = {2024-06-04},
-  abstract = {Retrieval Augmented Generation (RAG) expands the capabilities of modern large language models (LLMs) in chatbot applications, enabling developers to adapt and personalize the LLM output without expensive training or fine-tuning. RAG systems use an external knowledge database to retrieve the most relevant documents for a given query, providing this context to the LLM generator. While RAG achieves impressive utility in many applications, its adoption to enable personalized generative models introduces new security risks. In this work, we propose new attack surfaces for an adversary to compromise a victim's RAG system, by injecting a single malicious document in its knowledge database. We design Phantom, a general two-step attack framework against RAG augmented LLMs. The first step involves crafting a poisoned document designed to be retrieved by the RAG system within the top-k results only when an adversarial trigger---a specific sequence of words acting as backdoor---is present in the victim's queries. In the second step, a specially crafted adversarial string within the poisoned document triggers various adversarial attacks in the LLM generator, including denial of service, reputation damage, privacy violations, and harmful behaviors. We demonstrate our attacks on multiple LLM architectures, including Gemma, Vicuna, and Llama.},
-  archiveprefix = {arxiv},
+@inproceedings{severiExplanationGuidedBackdoorPoisoning2021,
+  title = {Explanation-{{Guided Backdoor Poisoning Attacks Against Malware Classifiers}}},
+  booktitle = {30th {{USENIX Security Symposium}} ({{USENIX Security}} 21)},
+  author = {Severi, Giorgio and Meyer, Jim and Coull, Scott and Oprea, Alina},
+  year = {2021},
+  pages = {1487--1504},
+  urldate = {2022-10-26},
+  abstract = {Training pipelines for machine learning (ML) based malware classification often rely on crowdsourced threat feeds, exposing a natural attack injection point. In this paper, we study the susceptibility of feature-based ML malware classifiers to backdoor poisoning attacks, specifically focusing on challenging "clean label" attacks where attackers do not control the sample labeling process. We propose the use of techniques from explainable machine learning to guide the selection of relevant features and values to create effective backdoor triggers in a model-agnostic fashion. Using multiple reference datasets for malware classification, including Windows PE files, PDFs, and Android applications, we demonstrate effective attacks against a diverse set of machine learning models and evaluate the effect of various constraints imposed on the attacker. To demonstrate the feasibility of our backdoor attacks in practice, we create a watermarking utility for Windows PE files that preserves the binary's functionality, and we leverage similar behavior-preserving alteration methodologies for Android and PDF files. Finally, we experiment with potential defensive strategies and show the difficulties of completely defending against these attacks, especially when the attacks blend in with the legitimate sample distribution.},
+  code = {https://github.com/ClonedOne/MalwareBackdoors},
+  isbn = {978-1-939133-24-3},
   langid = {english},
-  keywords = {Computer Science - Computation and Language,Computer Science - Cryptography and Security,Computer Science - Machine Learning},
-  file = {/Users/gio/Zotero/storage/SIP5RTQ2/Chaudhari et al. - 2024 - Phantom General Trigger Attacks on Retrieval Augm.pdf}
+  file = {/Users/gio/Zotero/storage/RN3IVDH9/Severi et al. - 2021 - Explanation-Guided Backdoor Poisoning Attacks Agai.pdf}
+}
+
+@inproceedings{jagielskiSubpopulationDataPoisoning2021,
+  title = {Subpopulation {{Data Poisoning Attacks}}},
+  booktitle = {Proceedings of the 2021 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}} ({{CCS}})},
+  author = {Jagielski, Matthew and Severi, Giorgio and Pousette Harger, Niklas and Oprea, Alina},
+  year = {2021},
+  month = nov,
+  series = {{{CCS}} '21},
+  pages = {3104--3122},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/3460120.3485368},
+  urldate = {2023-03-04},
+  abstract = {Machine learning systems are deployed in critical settings, but they might fail in unexpected ways, impacting the accuracy of their predictions. Poisoning attacks against machine learning induce adversarial modification of data used by a machine learning algorithm to selectively change its output when it is deployed. In this work, we introduce a novel data poisoning attack called a subpopulation attack, which is particularly relevant when datasets are large and diverse. We design a modular framework for subpopulation attacks, instantiate it with different building blocks, and show that the attacks are effective for a variety of datasets and machine learning models. We further optimize the attacks in continuous domains using influence functions and gradient optimization methods. Compared to existing backdoor poisoning attacks, subpopulation attacks have the advantage of inducing misclassification in naturally distributed data points at inference time, making the attacks extremely stealthy. We also show that our attack strategy can be used to improve upon existing targeted attacks. We prove that, under some assumptions, subpopulation attacks are impossible to defend against, and empirically demonstrate the limitations of existing defenses against our attacks, highlighting the difficulty of protecting machine learning against this threat.},
+  code = {https://github.com/jagielski/subpopulation-data-poisoning-attacks},
+  isbn = {978-1-4503-8454-4},
+  file = {/Users/gio/Zotero/storage/YI2CY45L/Jagielski et al. - 2021 - Subpopulation Data Poisoning Attacks.pdf}
+}
+
+@inproceedings{severiNetworkLevelAdversariesFederated2022,
+  title = {Network-{{Level Adversaries}} in {{Federated Learning}}},
+  booktitle = {2022 {{IEEE Conference}} on {{Communications}} and {{Network Security}} ({{CNS}})},
+  author = {Severi, Giorgio and Jagielski, Matthew and Yar, G{\"o}kberk and Wang, Yuxuan and Oprea, Alina and {Nita-Rotaru}, Cristina},
+  year = {2022},
+  month = oct,
+  pages = {19--27},
+  doi = {10.1109/CNS56114.2022.9947237},
+  abstract = {Federated learning is a popular strategy for training models on distributed, sensitive data, while preserving data privacy. Prior work identified a range of security threats on federated learning protocols that poison the data or the model. However, federated learning is a networked system where the communication between clients and server plays a critical role for the learning task performance. We highlight how communication introduces another vulnerability surface in federated learning and study the impact of network-level adversaries on training federated learning models. We show that attackers dropping the network traffic from carefully selected clients can significantly decrease model accuracy on a target population. Moreover, we show that a coordinated poisoning campaign from a few clients can amplify the dropping attacks. Finally, we develop a server-side defense which mitigates the impact of our attacks by identifying and up-sampling clients likely to positively contribute towards target accuracy. We comprehensively evaluate our attacks and defenses on three datasets, assuming encrypted communication channels and attackers with partial visibility of the network.},
+  code = {https://github.com/ClonedOne/Network-Level-Adversaries-in-Federated-Learning},
+  keywords = {Cryptography,Data models,Federated learning,Sociology,Telecommunication traffic,Toxicology,Training},
+  file = {/Users/gio/Zotero/storage/2PK57I46/Severi et al. - 2022 - Network-Level Adversaries in Federated Learning.pdf}
+}
+
+@inproceedings{severiBadCitrusReducing2022,
+  title = {Bad {{Citrus}}: {{Reducing Adversarial Costs}} with {{Model Distances}}},
+  shorttitle = {Bad {{Citrus}}},
+  booktitle = {2022 21st {{IEEE International Conference}} on {{Machine Learning}} and {{Applications}} ({{ICMLA}})},
+  author = {Severi, Giorgio and Pearce, Will and Oprea, Alina},
+  year = {2022},
+  month = dec,
+  pages = {307--312},
+  doi = {10.1109/ICMLA55696.2022.00050},
+  abstract = {Recent work by Jia et al. [1], showed the possibility of effectively computing pairwise model distances in weight space, using a model explanation technique known as LIME. This method requires query-only access to the two models under examination. We argue this insight can be leveraged by an adversary to reduce the net cost (number of queries) of launching an evasion campaign against a deployed model. We show that there is a strong negative correlation between the success rate of adversarial transfer and the distance between the victim model and the surrogate used to generate the evasive samples. Thus, we propose and evaluate a method to reduce adversarial costs by finding the closest surrogate model for adversarial transfer.},
+  code = {https://github.com/ClonedOne/bad\_lemon},
+  keywords = {adversarial examples,adversarial machine learning,Computational modeling,Correlation,Costs,Machine learning},
+  file = {/Users/gio/Zotero/storage/KXYKMUEN/Severi et al. - 2022 - Bad Citrus Reducing Adversarial Costs with Model .pdf}
+}
+
+@inproceedings{dibartolomeoAskYouShall2023,
+  title = {Ask and You Shall Receive (a Graph Drawing): {{Testing ChatGPT}}'s Potential to Apply Graph Layout Algorithms},
+  shorttitle = {Ask and You Shall Receive (a Graph Drawing)},
+  booktitle = {{{EuroVis Conference}} on {{Visualization}}},
+  author = {Di Bartolomeo, Sara and Severi, Giorgio and Schetinger, Victor and Dunne, Cody},
+  year = {2023},
+  urldate = {2023-08-11},
+  abstract = {Large language models (LLMs) have recently taken the world by storm. They can generate coherent text, hold meaningful conversations, and be taught concepts and basic sets of instructions---such as the steps of an algorithm. In this context, we are interested in exploring the application of LLMs to graph drawing algorithms by performing experiments on ChatGPT. These algorithms are used to improve the readability of graph visualizations. The probabilistic nature of LLMs presents challenges to implementing algorithms correctly, but we believe that LLMs' ability to learn from vast amounts of data and apply complex operations may lead to interesting graph drawing results. For example, we could enable users with limited coding backgrounds to use simple natural language to create effective graph visualizations. Natural language specification would make data visualization more accessible and user-friendly for a wider range of users. Exploring LLMs' capabilities for graph drawing can also help us better understand how to formulate complex algorithms for LLMs; a type of knowledge that could transfer to other areas of computer science. Overall, our goal is to shed light on the exciting possibilities of using LLMs for graph drawing while providing a balanced assessment of the challenges and opportunities they present. A free copy of this paper with all supplemental materials to reproduce our results is available at https://osf.io/n5rxd/.},
+  code = {https://osf.io/n5rxd/},
+  langid = {english},
+  file = {/Users/gio/Zotero/storage/IGNI65RF/Di Bartolomeo et al. - 2023 - Ask and you shall receive (a graph drawing) Testi.pdf}
 }
 
 @patent{coullSystemMethodHeterogeneous2022,
@@ -55,102 +117,9 @@
   doi = {10.48550/arXiv.2309.05610},
   urldate = {2023-09-18},
   abstract = {Most current approaches for protecting privacy in machine learning (ML) assume that models exist in a vacuum, when in reality, ML models are part of larger systems that include components for training data filtering, output monitoring, and more. In this work, we introduce privacy side channels: attacks that exploit these system-level components to extract private information at far higher rates than is otherwise possible for standalone models. We propose four categories of side channels that span the entire ML lifecycle (training data filtering, input preprocessing, output post-processing, and query filtering) and allow for either enhanced membership inference attacks or even novel threats such as extracting users' test queries. For example, we show that deduplicating training data before applying differentially-private training creates a side-channel that completely invalidates any provable privacy guarantees. Moreover, we show that systems which block language models from regenerating training data can be exploited to allow exact reconstruction of private keys contained in the training set -- even if the model did not memorize these keys. Taken together, our results demonstrate the need for a holistic, end-to-end privacy analysis of machine learning.},
-  archiveprefix = {arxiv},
+  archiveprefix = {arXiv},
   keywords = {Computer Science - Cryptography and Security,Computer Science - Machine Learning},
   file = {/Users/gio/Zotero/storage/RNQCW9HX/Debenedetti et al. - 2023 - Privacy Side Channels in Machine Learning Systems.pdf}
-}
-
-@inproceedings{dibartolomeoAskYouShall2023,
-  title = {Ask and You Shall Receive (a Graph Drawing): {{Testing ChatGPT}}'s Potential to Apply Graph Layout Algorithms},
-  shorttitle = {Ask and You Shall Receive (a Graph Drawing)},
-  booktitle = {{{EuroVis Conference}} on {{Visualization}}},
-  author = {Di Bartolomeo, Sara and Severi, Giorgio and Schetinger, Victor and Dunne, Cody},
-  year = {2023},
-  urldate = {2023-08-11},
-  abstract = {Large language models (LLMs) have recently taken the world by storm. They can generate coherent text, hold meaningful conversations, and be taught concepts and basic sets of instructions---such as the steps of an algorithm. In this context, we are interested in exploring the application of LLMs to graph drawing algorithms by performing experiments on ChatGPT. These algorithms are used to improve the readability of graph visualizations. The probabilistic nature of LLMs presents challenges to implementing algorithms correctly, but we believe that LLMs' ability to learn from vast amounts of data and apply complex operations may lead to interesting graph drawing results. For example, we could enable users with limited coding backgrounds to use simple natural language to create effective graph visualizations. Natural language specification would make data visualization more accessible and user-friendly for a wider range of users. Exploring LLMs' capabilities for graph drawing can also help us better understand how to formulate complex algorithms for LLMs; a type of knowledge that could transfer to other areas of computer science. Overall, our goal is to shed light on the exciting possibilities of using LLMs for graph drawing while providing a balanced assessment of the challenges and opportunities they present. A free copy of this paper with all supplemental materials to reproduce our results is available at https://osf.io/n5rxd/.},
-  code = {https://osf.io/n5rxd/},
-  langid = {english},
-  file = {/Users/gio/Zotero/storage/IGNI65RF/Di Bartolomeo et al. - 2023 - Ask and you shall receive (a graph drawing) Testi.pdf}
-}
-
-@inproceedings{jagielskiSubpopulationDataPoisoning2021,
-  title = {Subpopulation {{Data Poisoning Attacks}}},
-  booktitle = {Proceedings of the 2021 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}} ({{CCS}})},
-  author = {Jagielski, Matthew and Severi, Giorgio and Pousette Harger, Niklas and Oprea, Alina},
-  year = {2021},
-  month = nov,
-  series = {{{CCS}} '21},
-  pages = {3104--3122},
-  publisher = {Association for Computing Machinery},
-  address = {New York, NY, USA},
-  doi = {10.1145/3460120.3485368},
-  urldate = {2023-03-04},
-  abstract = {Machine learning systems are deployed in critical settings, but they might fail in unexpected ways, impacting the accuracy of their predictions. Poisoning attacks against machine learning induce adversarial modification of data used by a machine learning algorithm to selectively change its output when it is deployed. In this work, we introduce a novel data poisoning attack called a subpopulation attack, which is particularly relevant when datasets are large and diverse. We design a modular framework for subpopulation attacks, instantiate it with different building blocks, and show that the attacks are effective for a variety of datasets and machine learning models. We further optimize the attacks in continuous domains using influence functions and gradient optimization methods. Compared to existing backdoor poisoning attacks, subpopulation attacks have the advantage of inducing misclassification in naturally distributed data points at inference time, making the attacks extremely stealthy. We also show that our attack strategy can be used to improve upon existing targeted attacks. We prove that, under some assumptions, subpopulation attacks are impossible to defend against, and empirically demonstrate the limitations of existing defenses against our attacks, highlighting the difficulty of protecting machine learning against this threat.},
-  code = {https://github.com/jagielski/subpopulation-data-poisoning-attacks},
-  isbn = {978-1-4503-8454-4},
-  file = {/Users/gio/Zotero/storage/YI2CY45L/Jagielski et al. - 2021 - Subpopulation Data Poisoning Attacks.pdf}
-}
-
-@inproceedings{severiBadCitrusReducing2022,
-  title = {Bad {{Citrus}}: {{Reducing Adversarial Costs}} with {{Model Distances}}},
-  shorttitle = {Bad {{Citrus}}},
-  booktitle = {2022 21st {{IEEE International Conference}} on {{Machine Learning}} and {{Applications}} ({{ICMLA}})},
-  author = {Severi, Giorgio and Pearce, Will and Oprea, Alina},
-  year = {2022},
-  month = dec,
-  pages = {307--312},
-  doi = {10.1109/ICMLA55696.2022.00050},
-  abstract = {Recent work by Jia et al. [1], showed the possibility of effectively computing pairwise model distances in weight space, using a model explanation technique known as LIME. This method requires query-only access to the two models under examination. We argue this insight can be leveraged by an adversary to reduce the net cost (number of queries) of launching an evasion campaign against a deployed model. We show that there is a strong negative correlation between the success rate of adversarial transfer and the distance between the victim model and the surrogate used to generate the evasive samples. Thus, we propose and evaluate a method to reduce adversarial costs by finding the closest surrogate model for adversarial transfer.},
-  code = {https://github.com/ClonedOne/bad\_lemon},
-  keywords = {adversarial examples,adversarial machine learning,Computational modeling,Correlation,Costs,Machine learning},
-  file = {/Users/gio/Zotero/storage/KXYKMUEN/Severi et al. - 2022 - Bad Citrus Reducing Adversarial Costs with Model .pdf}
-}
-
-@inproceedings{severiExplanationGuidedBackdoorPoisoning2021,
-  title = {Explanation-{{Guided Backdoor Poisoning Attacks Against Malware Classifiers}}},
-  booktitle = {30th {{USENIX Security Symposium}} ({{USENIX Security}} 21)},
-  author = {Severi, Giorgio and Meyer, Jim and Coull, Scott and Oprea, Alina},
-  year = {2021},
-  pages = {1487--1504},
-  urldate = {2022-10-26},
-  abstract = {Training pipelines for machine learning (ML) based malware classification often rely on crowdsourced threat feeds, exposing a natural attack injection point. In this paper, we study the susceptibility of feature-based ML malware classifiers to backdoor poisoning attacks, specifically focusing on challenging "clean label" attacks where attackers do not control the sample labeling process. We propose the use of techniques from explainable machine learning to guide the selection of relevant features and values to create effective backdoor triggers in a model-agnostic fashion. Using multiple reference datasets for malware classification, including Windows PE files, PDFs, and Android applications, we demonstrate effective attacks against a diverse set of machine learning models and evaluate the effect of various constraints imposed on the attacker. To demonstrate the feasibility of our backdoor attacks in practice, we create a watermarking utility for Windows PE files that preserves the binary's functionality, and we leverage similar behavior-preserving alteration methodologies for Android and PDF files. Finally, we experiment with potential defensive strategies and show the difficulties of completely defending against these attacks, especially when the attacks blend in with the legitimate sample distribution.},
-  code = {https://github.com/ClonedOne/MalwareBackdoors},
-  isbn = {978-1-939133-24-3},
-  langid = {english},
-  file = {/Users/gio/Zotero/storage/RN3IVDH9/Severi et al. - 2021 - Explanation-Guided Backdoor Poisoning Attacks Agai.pdf}
-}
-
-@inproceedings{severiMalrecCompactFullTrace2018,
-  title = {Malrec: {{Compact Full-Trace Malware Recording}} for {{Retrospective Deep Analysis}}},
-  shorttitle = {Malrec},
-  booktitle = {Detection of {{Intrusions}} and {{Malware}}, and {{Vulnerability Assessment}} ({{DIMVA}})},
-  author = {Severi, Giorgio and Leek, Tim and {Dolan-Gavitt}, Brendan},
-  year = {2018},
-  volume = {10885},
-  pages = {3--23},
-  publisher = {Springer International Publishing},
-  address = {Cham},
-  doi = {10.1007/978-3-319-93411-2_1},
-  urldate = {2019-02-20},
-  abstract = {Malware sandbox systems have become a critical part of the Internet's defensive infrastructure. These systems allow malware researchers to quickly understand a sample's behavior and effect on a system. However, current systems face two limitations: first, for performance reasons, the amount of data they can collect is limited (typically to system call traces and memory snapshots). Second, they lack the ability to perform retrospective analysis---that is, to later extract features of the malware's execution that were not considered relevant when the sample was originally executed. In this paper, we introduce a new malware sandbox system, Malrec, which uses whole-system deterministic record and replay to capture high-fidelity, whole-system traces of malware executions with low time and space overheads. We demonstrate the usefulness of this system by presenting a new dataset of 66,301 malware recordings collected over a two-year period, along with two preliminary analyses that would not be possible without full traces: an analysis of kernel mode malware and exploits, and a fine-grained malware family classification based on textual memory access contents. The Malrec system and dataset can help provide a standardized benchmark for evaluating the performance of future dynamic analyses.},
-  code = {https://github.com/ClonedOne/malwords},
-  isbn = {978-3-319-93410-5 978-3-319-93411-2},
-  langid = {english},
-  file = {/Users/gio/Zotero/storage/LKT3P6FZ/Severi et al. - 2018 - Malrec Compact Full-Trace Malware Recording for R.pdf}
-}
-
-@inproceedings{severiNetworkLevelAdversariesFederated2022,
-  title = {Network-{{Level Adversaries}} in {{Federated Learning}}},
-  booktitle = {2022 {{IEEE Conference}} on {{Communications}} and {{Network Security}} ({{CNS}})},
-  author = {Severi, Giorgio and Jagielski, Matthew and Yar, G{\"o}kberk and Wang, Yuxuan and Oprea, Alina and {Nita-Rotaru}, Cristina},
-  year = {2022},
-  month = oct,
-  pages = {19--27},
-  doi = {10.1109/CNS56114.2022.9947237},
-  abstract = {Federated learning is a popular strategy for training models on distributed, sensitive data, while preserving data privacy. Prior work identified a range of security threats on federated learning protocols that poison the data or the model. However, federated learning is a networked system where the communication between clients and server plays a critical role for the learning task performance. We highlight how communication introduces another vulnerability surface in federated learning and study the impact of network-level adversaries on training federated learning models. We show that attackers dropping the network traffic from carefully selected clients can significantly decrease model accuracy on a target population. Moreover, we show that a coordinated poisoning campaign from a few clients can amplify the dropping attacks. Finally, we develop a server-side defense which mitigates the impact of our attacks by identifying and up-sampling clients likely to positively contribute towards target accuracy. We comprehensively evaluate our attacks and defenses on three datasets, assuming encrypted communication channels and attackers with partial visibility of the network.},
-  code = {https://github.com/ClonedOne/Network-Level-Adversaries-in-Federated-Learning},
-  keywords = {Cryptography,Data models,Federated learning,Sociology,Telecommunication traffic,Toxicology,Training},
-  file = {/Users/gio/Zotero/storage/2PK57I46/Severi et al. - 2022 - Network-Level Adversaries in Federated Learning.pdf}
 }
 
 @inproceedings{severiPoisoningNetworkFlow2023,
@@ -169,4 +138,51 @@
   code = {https://github.com/ClonedOne/poisoning\_network\_flow\_classifiers},
   isbn = {9798400708862},
   file = {/Users/gio/Zotero/storage/R23BY8G9/Severi et al. - 2023 - Poisoning Network Flow Classifiers.pdf}
+}
+
+@inproceedings{chaudhariChameleonIncreasingLabelOnly2024,
+  title = {Chameleon: {{Increasing Label-Only Membership Leakage}} with {{Adaptive Poisoning}}},
+  shorttitle = {Chameleon},
+  booktitle = {The {{Twelfth International Conference}} on {{Learning Representations}} ({{ICLR}})},
+  author = {Chaudhari, Harsh and Severi, Giorgio and Oprea, Alina and Ullman, Jonathan},
+  year = {2024},
+  month = jan,
+  urldate = {2024-06-04},
+  abstract = {The integration of Machine Learning (ML) in numerous critical applications introduces a range of privacy concerns for individuals who provide their datasets for ML training purposes. One such privacy risk is Membership Inference (MI), in which an adversary seeks to determine whether a particular data point was included in the training dataset of a model. Current state-of-the-art MI approaches capitalize on access to the model's predicted confidence scores to successfully perform membership inference, and employ data poisoning to further enhance their effectiveness. In this work, we focus on the less explored and more realistic label-only setting, where the model provides only the predicted label as output. We show that existing label-only attacks are ineffective at inferring membership in the low False Positive Rate (FPR) regime. To address this challenge, we propose a new attack Chameleon that leverages a novel data poisoning strategy and an efficient query selection method to achieve significantly more accurate membership inference than existing label-only attacks, especially for low FPRs.},
+  langid = {english},
+  file = {/Users/gio/Zotero/storage/HEW78RLK/Chaudhari et al. - 2023 - Chameleon Increasing Label-Only Membership Leakag.pdf}
+}
+
+@misc{chaudhariPhantomGeneralTrigger2024,
+  title = {Phantom: {{General Trigger Attacks}} on {{Retrieval Augmented Language Generation}}},
+  shorttitle = {Phantom},
+  author = {Chaudhari, Harsh and Severi, Giorgio and Abascal, John and Jagielski, Matthew and {Choquette-Choo}, Christopher A. and Nasr, Milad and {Nita-Rotaru}, Cristina and Oprea, Alina},
+  year = {2024},
+  month = may,
+  number = {arXiv:2405.20485},
+  eprint = {2405.20485},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  urldate = {2024-06-04},
+  abstract = {Retrieval Augmented Generation (RAG) expands the capabilities of modern large language models (LLMs) in chatbot applications, enabling developers to adapt and personalize the LLM output without expensive training or fine-tuning. RAG systems use an external knowledge database to retrieve the most relevant documents for a given query, providing this context to the LLM generator. While RAG achieves impressive utility in many applications, its adoption to enable personalized generative models introduces new security risks. In this work, we propose new attack surfaces for an adversary to compromise a victim's RAG system, by injecting a single malicious document in its knowledge database. We design Phantom, a general two-step attack framework against RAG augmented LLMs. The first step involves crafting a poisoned document designed to be retrieved by the RAG system within the top-k results only when an adversarial trigger---a specific sequence of words acting as backdoor---is present in the victim's queries. In the second step, a specially crafted adversarial string within the poisoned document triggers various adversarial attacks in the LLM generator, including denial of service, reputation damage, privacy violations, and harmful behaviors. We demonstrate our attacks on multiple LLM architectures, including Gemma, Vicuna, and Llama.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computation and Language,Computer Science - Cryptography and Security,Computer Science - Machine Learning},
+  file = {/Users/gio/Zotero/storage/SIP5RTQ2/Chaudhari et al. - 2024 - Phantom General Trigger Attacks on Retrieval Augm.pdf}
+}
+
+@misc{severiModelagnosticCleanlabelBackdoor2024,
+  title = {Model-Agnostic Clean-Label Backdoor Mitigation in Cybersecurity Environments},
+  author = {Severi, Giorgio and Boboila, Simona and Holodnak, John and Kratkiewicz, Kendra and Izmailov, Rauf and Oprea, Alina},
+  year = {2024},
+  month = jul,
+  number = {arXiv:2407.08159},
+  eprint = {2407.08159},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  urldate = {2024-07-18},
+  abstract = {The training phase of machine learning models is a delicate step, especially in cybersecurity contexts. Recent research has surfaced a series of insidious training-time attacks that inject backdoors in models designed for security classification tasks without altering the training labels. With this work, we propose new techniques that leverage insights in cybersecurity threat models to effectively mitigate these clean-label poisoning attacks, while preserving the model utility. By performing density-based clustering on a carefully chosen feature subspace, and progressively isolating the suspicious clusters through a novel iterative scoring procedure, our defensive mechanism can mitigate the attacks without requiring many of the common assumptions in the existing backdoor defense literature. To show the generality of our proposed mitigation, we evaluate it on two clean-label model-agnostic attacks on two different classic cybersecurity data modalities: network flows classification and malware classification, using gradient boosting and neural network models.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Cryptography and Security,Computer Science - Machine Learning},
+  file = {/Users/gio/Zotero/storage/V46P3BNL/Severi et al. - 2024 - Model-agnostic clean-label backdoor mitigation in .pdf}
 }
