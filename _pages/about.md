@@ -18,7 +18,7 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-I am a computer scientist interested in machine learning security.
+I am a Senior AI Safety Researcher at Microsoft, with the AI Red Team.
 I received my PhD from [Northeastern University](https://www.northeastern.edu/), where I worked in the [NDS2](https://nds2.ccs.neu.edu/) lab, advised by professor [Alina Oprea](http://www.ccs.neu.edu/home/alina/).
 
-My research focuses on adversarial machine learning -- breaking ML systems -- with a particular focus on ML applications to security sensitive environments. I am also interested in most aspects of ML safety.
+My main interest is in machine learning security and adversarial machine learning (breaking AI systems), especially when ML is applied to security sensitive environments. I am also interested in most aspects of AI safety.
