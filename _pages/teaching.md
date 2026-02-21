@@ -9,6 +9,7 @@ nav_order: 1
 
 ## talks
 
+- [USENIX Security '21 - Explanation-Guided Backdoor Poisoning Attacks Against Malware Classifiers](https://www.youtube.com/watch?v=F_iytbUp28s). Giorgio Severi, Jim Meyer, Scott Coull. USENIX Security Symposium 2021, August 2021.
 - [Zen and the Art of Adversarial Machine Learning](https://www.blackhat.com/eu-21/briefings/schedule/index.html#zen-and-the-art-of-adversarial-machine-learning-24746). Will Pearce, Giorgio Severi. Black Hat Europe 2021, London, UK.
 - [Exploring Backdoor Poisoning Attacks Against Malware Classifiers](https://www.camlis.org/2019/talks/severi). Giorgio Severi, Jim Meyer, Scott Coull. Conference on Applied Machine Learning in Information Security, CAMLIS, 2019, Washington, DC. 
 

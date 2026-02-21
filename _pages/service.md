@@ -7,6 +7,8 @@ nav: true
 nav_order: 2
 ---
 
+- Program Committee member for the 47th [IEEE Symposium on Security and Privacy](https://sp2026.ieee-security.org/) (Oakland 2026).
+- Program Committee member for the 18th [ACM Workshop on Artificial Intelligence and Security 2025](https://aisec.cc/#committee).
 - Program Committee member for the 17th [ACM Workshop on Artificial Intelligence and Security 2024](https://aisec.cc/).
 - Program Committee member for the [Workshop on Artificial Intelligence System with Confidential Computing (AISCC) 2024](https://www.ndss-symposium.org/ndss2024/co-located-events/aiscc/leadership/).
 - Program Committee member for the 16th [ACM Workshop on Artificial Intelligence and Security 2023](https://aisec.cc/2023/index.html).
